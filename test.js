@@ -23,3 +23,15 @@ for (var i = 0; i < noise.length; i++ ) {
   assert.strictEqual(typeof noise[i], 'number');
 }
 
+
+noise = perlin.generatePerlinNoise(10, 1, {
+	amplitude: 0.5,
+	octaveCount: 8,
+	persistence: 0.2,
+	mode:'daily'
+  });
+  assert.strictEqual(noise.length, 10 * 1);
+  for (var i = 0; i < noise.length; i++ ) {
+	assert.strictEqual(typeof noise[i], 'number');
+  }
+  
