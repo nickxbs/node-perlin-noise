@@ -82,16 +82,6 @@ function generateRandomNoise(width, height) {
 	return noise;
 }
 
-function hashCode(seed) {
-	var hash = 0;
-	if (!seed || seed.length === 0) return hash;
-	for (i = 0; i < seed.length; i++) {
-		char = seed.charCodeAt(i);
-		hash = ((hash << 5) - hash) + char;
-		hash = hash & hash; // Convert to 32bit integer
-	}
-	return hash;
-}
 
 function generateRandomSeedDailyNoise(width, height) {
 	var noise = new Array(width * height);
