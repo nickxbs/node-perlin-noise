@@ -90,7 +90,7 @@ function generateRandomSeedDailyNoise(width, height, seed) {
 
 	for (var i = 0; i < noise.length; ++i) {
 		const rndInt = parseInt(crypto.createHash('sha256').update(today + i + seed).digest('hex').substring(0, 8), 16).toString().substring(1);
-		noise[i] = rndInt;
+		noise[i] = parseFloat('0.' + rndInt);
 	}
 	return noise;
 }
