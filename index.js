@@ -11,7 +11,7 @@ function generatePerlinNoise(width, height, options) {
 	var persistence = options.persistence || 0.2;
 	var mode = options.mode || 'random';
 	var seed = options.seed || '';
-	var whiteNoise = generateWhiteNoise(width, height, mode,seed);
+	var whiteNoise = generateWhiteNoise(width, height, mode, seed);
 
 	var smoothNoiseList = new Array(octaveCount);
 	var i;
@@ -87,10 +87,10 @@ function generateRandomNoise(width, height) {
 function generateRandomSeedDailyNoise(width, height, seed) {
 	var noise = new Array(width * height);
 	var today = new Date().toISOString().substring(0, 10);
-	
+
 	for (var i = 0; i < noise.length; ++i) {
-		const rndInt = parseInt(crypto.createHash('sha256').update(seed + today + i).digest('hex').substring(0, 8), 16);
-		noise[i] = parseFloat('0.' + rndInt);
+		const rndInt = parseInt(crypto.createHash('sha256').update(today + i + seed).digest('hex').substring(0, 8), 16).toString().substring(1);
+		noise[i] = Math.random();
 	}
 	return noise;
 }
