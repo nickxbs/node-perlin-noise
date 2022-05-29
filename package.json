@@ -4,16 +4,19 @@
   "description": "simple perlin noise generator",
   "main": "index.js",
   "publishConfig": {
-	"registry": "https://npm.pkg.github.com"
-},
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nickxbs/node-perlin-noise.git"
+    "url": "git+https://github.com/nickxbs/node-perlin-noise.git"
   },
   "author": "Nicola Febbrari <febbrari@gmail.com>",
-  
-  "license": "BSD"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickxbs/node-perlin-noise/issues"
+  },
+  "homepage": "https://github.com/nickxbs/node-perlin-noise#readme"
 }
